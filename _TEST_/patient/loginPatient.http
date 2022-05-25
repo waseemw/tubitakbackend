@@ -1,0 +1,6 @@
+POST http://localhost:8000/patient/login
+Content-Type: application/json
+
+{
+  "patientTc": "10952336010"
+}

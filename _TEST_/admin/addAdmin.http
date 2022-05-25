@@ -1,0 +1,7 @@
+POST http://localhost:8000/admin/add_admin
+Content-Type: application/json
+
+{
+  "username":"tubitak",
+  "admin_password": "12345678"
+}

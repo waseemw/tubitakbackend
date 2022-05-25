@@ -1,0 +1,7 @@
+POST http://localhost:8000/relative/sign_in
+Content-Type: application/json
+
+{
+  "email":"akgol97_@hotmail.com",
+  "password": "1234567"
+}

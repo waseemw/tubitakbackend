@@ -1,0 +1,2 @@
+GET http://localhost:8000/patient/get_patient_name
+uuid:2cad3059-648e-491a-9efa-f0f1878ce49a

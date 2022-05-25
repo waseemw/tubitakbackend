@@ -1,0 +1,1 @@
+GET http://localhost:8000/admin//get_single_patient/10952336010

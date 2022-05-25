@@ -1,0 +1,18 @@
+POST http://localhost:8000/relative/add_patient
+Token:0cf260709e3cc4edb7f39f57045ef816536174204e6f762031332031333a32353a35392032303231
+Content-Type: application/json
+
+{
+  "PatientBd": "1998-01-04",
+  "PRName": "Derman",
+  "PRNum": "05378270553",
+  "PRName2": "Dilek",
+  "PRNum2": "05318874348",
+  "PatientGender": "M",
+  "PatientAddress": "Karaagac Konarli Mahallesi 6. Sokak no 8",
+  "PatientTc": "10952336010",
+  "PatientName": "Ali",
+  "PatientSurname": "Akgol",
+  "PRSurname": "Keskinkilinc",
+  "PRSurname2": "Yayman"
+}

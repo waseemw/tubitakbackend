@@ -1,0 +1,8 @@
+POST http://localhost:8000/track/send_location
+Content-Type: application/json
+
+{
+  "beaconId": "66785fc6-7683-4bd0-8d5e-c27ac64dc302",
+  "patientId": "4d25fe0a-4c13-464c-9805-20342fa569c9",
+  "distance": "0.5"
+}
