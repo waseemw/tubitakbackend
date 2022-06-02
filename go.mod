@@ -3,8 +3,8 @@ module tubitakPrototypeGo
 go 1.16
 
 require (
-	github.com/AfterShip/email-verifier v1.3.0 // indirect
-	github.com/barisesen/tcverify v0.0.0-20180312211244-fb432ff84ffe // indirect
+	github.com/AfterShip/email-verifier v1.3.0
+	github.com/barisesen/tcverify v0.0.0-20180312211244-fb432ff84ffe
 	github.com/gin-gonic/gin v1.7.4
 	github.com/go-playground/validator/v10 v10.9.0 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect

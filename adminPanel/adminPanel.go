@@ -19,7 +19,7 @@ func SetupAdminPanel(rg *gin.RouterGroup) {
 	rg.GET("/get_info_patient/:patientId/:page", getSinglePatientTrackingInfo)
 	rg.GET("/get_single_patient/:singlePatientId", getSinglePatientInfo)
 	rg.GET("/get_info_beacon/:beaconId/:page", getSingleBeaconTrackingInfo)
-	rg.POST("/add_relative", sendPassword)
+	rg.POST("/add_relative", addRelative)
 
 }
 
@@ -50,6 +50,7 @@ func signup(c *gin.Context) {
 	var username string
 	err = adminPanelDatabase.SignUpDb(body.Username, password, &username)
 	if err != nil {
+		//fmt.Println(err)
 		helpers.MyAbort(c, "Admin Is already exist")
 		return
 	}
@@ -65,7 +66,7 @@ func getAllBeaconInfo(c *gin.Context) {
 	}
 	allBeaconsInfoRows, totalBeconNum, err := getAllBeaconRows(offSet * itemsPerPage)
 	if err != nil {
-		fmt.Println(err)
+		//fmt.Println(err)
 		helpers.MyAbort(c, "Could not reach beacons info")
 		return
 	}
@@ -130,6 +131,7 @@ func getSingleBeaconTrackingInfo(c *gin.Context) {
 
 func getSinglePatientInfo(c *gin.Context) {
 	patientId := c.Param("singlePatientId")
+	fmt.Println("patient", patientId)
 	row, err := getSinglePatientInfoRow(patientId)
 	if err != nil {
 		helpers.MyAbort(c, "Patient couldn't be got it")
@@ -139,7 +141,7 @@ func getSinglePatientInfo(c *gin.Context) {
 	c.JSON(200, row)
 }
 
-func sendPassword(c *gin.Context) {
+func addRelative(c *gin.Context) {
 	body := emailStruct{}
 	data, err := c.GetRawData()
 	if err != nil {

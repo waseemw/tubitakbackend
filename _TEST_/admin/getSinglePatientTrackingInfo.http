@@ -1,1 +1,1 @@
-GET http://localhost:8000/admin/get_info_patient/10952336010/1
+GET http://localhost:8000/admin/get_info_patient/10952336010/0

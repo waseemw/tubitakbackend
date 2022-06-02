@@ -52,7 +52,7 @@ func GetAllBeaconRowsDb(pageOffset int) (*sql.Rows, int, error) {
 func GetSingleBeaconIdDb(beaconId string, offSet int) (*sql.Rows, int, error) {
 	var singleBeaconTrackNum int
 	rows, err := database.Db.Query("select pt.patient_tc,seen_time,distance,bdt.location,bdt.google_map_link,bdt.minor,bdt.major from patient_tracker_info_table left join patient_table pt on patient_tracker_info_table.patient_id = pt.patient_id left join beacon_devices_table as bdt  on  bdt.device_id=patient_tracker_info_table.beacon_id where beacon_id=$1 order by seen_time LIMIT 10 OFFSET $2", beaconId, offSet)
-	err = database.Db.QueryRow("select count(pt.patient_tc) from patient_tracker_info_table left join patient_table pt on patient_tracker_info_table.patient_id = pt.patient_id left join beacon_devices_table as bdt  on  bdt.device_id=patient_tracker_info_table.beacon_id where beacon_id='66785fc6-7683-4bd0-8d5e-c27ac64dc302'").Scan(&singleBeaconTrackNum)
+	err = database.Db.QueryRow("select count(pt.patient_tc) from patient_tracker_info_table left join patient_table pt on patient_tracker_info_table.patient_id = pt.patient_id left join beacon_devices_table as bdt  on  bdt.device_id=patient_tracker_info_table.beacon_id where beacon_id=$1", beaconId).Scan(&singleBeaconTrackNum)
 	return rows, singleBeaconTrackNum, err
 }
 

@@ -2,6 +2,7 @@ package login
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"tubitakPrototypeGo/helpers"
 	"tubitakPrototypeGo/login/loginDb"
@@ -28,6 +29,7 @@ func login(c *gin.Context) {
 	err = loginDb.LoginForPatient(body.PatientTc, &patientId, &patientName)
 	if err != nil {
 		helpers.MyAbort(c, "There is no such a patient")
+		fmt.Println(err)
 		return
 	}
 	c.JSON(200, gin.H{
